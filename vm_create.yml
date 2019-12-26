@@ -53,7 +53,7 @@
     azure_rm_virtualmachine:
       resource_group: "{{ resource_group }}"
       name: "{{ vm_name }}"
-      vm_size: Standard_DS1_v2
+      vm_size: Standard_B1s
       admin_username: azureuser
       admin_password: Password@123
       network_interfaces: "{{ vm_name }}"
