@@ -58,7 +58,7 @@
       admin_password: Password@123
       network_interfaces: "{{ vm_name }}"
       image:
-        offer: UbuntuServer
-        publisher: Canonical
-        sku: 16.04-LTS
+        offer: RHEL
+        publisher: RedHat
+        sku: 7-LVM
         version: latest
