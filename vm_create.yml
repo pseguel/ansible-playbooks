@@ -9,11 +9,12 @@
     resource_group: "{{ resource_group_name }}"
     current_date: "{{ '%Y-%m-%d' | strftime }}" 
     vm_name: "TestVM-{{ current_date }}"
+    pfx: "{{ 100000 | random() }}"
     location: eastus
     azure_tags: 
       creator: 'ansible'
       organization: 'produccion'
-      project_id: "{{ 100000 | random() }}"
+      project_id: "{{ project_id | default(pfx) }}"
   tasks:
   - name: Create a resource group
     azure_rm_resourcegroup:
