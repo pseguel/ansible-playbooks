@@ -13,7 +13,7 @@
     azure_tags: 
       creator: 'ansible'
       organization: 'produccion'
-      project_id: "{{ 100000 | random(step=10) }}"
+      project_id: "{{ 100000 | random() }}"
   tasks:
   - name: Create a resource group
     azure_rm_resourcegroup:
