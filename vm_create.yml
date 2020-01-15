@@ -11,7 +11,7 @@
     vm_name: "TestVM-{{ current_date }}"
     location: eastus
     azure_tags: 
-      creator: 'ancccsible'
+      creator: 'ansible'
       organization: 'produccion'
       project_id: "{{ 100000 | random(step=10) }}"
   tasks:
