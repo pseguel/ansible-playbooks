@@ -7,8 +7,13 @@
   connection: local
   vars:
     resource_group: "{{ resource_group_name }}"
-    vm_name: testvm
+    current_date: "{{ '%Y-%m-%d' | strftime }}" 
+    vm_name: "TestVM-{{ current_date }}"
     location: eastus
+    azure_tags: 
+      creator: 'ancccsible'
+      organization: 'produccion'
+      project_id: "{{ 100000 | random(step=10) }}"
   tasks:
   - name: Create a resource group
     azure_rm_resourcegroup:
@@ -57,6 +62,7 @@
       admin_username: azureuser
       admin_password: Password@123
       network_interfaces: "{{ vm_name }}"
+      tags: "{{ azure_tags }}"
       image:
         offer: RHEL
         publisher: RedHat
