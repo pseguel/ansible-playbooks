@@ -1,0 +1,11 @@
+---
+- hosts: all
+
+  tasks:
+  - name: subscribe RHEL
+    redhat_subscription:
+      state: present
+      username: "{{ rhn_user }}"
+      password: "{{ rhn_password }}"
+      pool: '^Red Hat Enterprise Server$'
+
