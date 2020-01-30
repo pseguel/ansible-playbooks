@@ -61,7 +61,7 @@
       name: "{{ vm_name }}"
       vm_size: "{{ vm_size | default('Standard_B1s') }}"
       admin_username: azureuser
-      admin_password: "{{ vm_password }}"
+      admin_password: "Password@123"
       ssh_public_keys: 
       - path: /home/azureuser/.ssh/authorized_keys
         key_data: "{{ public_key }}"
